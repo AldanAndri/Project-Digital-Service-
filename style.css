@@ -1,0 +1,225 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #334155
+    );
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.banner{
+    width:100%;
+}
+
+.banner img{
+    width:100%;
+    display:block;
+
+    /* Animasi */
+    opacity:0;
+    transform:scale(0.95);
+    animation:fadeMasuk 1.5s ease forwards;
+}
+
+.menu{
+    text-align:center;
+    margin-top:20px;
+}
+
+button{
+    padding:12px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+@keyframes fadeMasuk{
+    0%{
+        opacity:0;
+        transform:scale(0.95);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.content{
+    text-align:center;
+    padding:25px;
+    color:white;
+}
+
+.deskripsi{
+    font-size:16px;
+    color:#d0d0d0;
+    line-height:1.6;
+    max-width:700px;
+    margin:20px auto 30px;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 40px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+    margin-bottom:50px;
+}
+
+.card{
+    width:140px;
+    height:190px;
+    background:#1b1b1b;
+    border-radius:20px;
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.video-box{
+    width: 100%;
+    margin-top: 40px;   /* jarak dari tombol */
+    display: flex;
+    justify-content: center;
+}
+
+.video-box video{
+    width: 90%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,.15);
+}
+.game-float{
+    position:fixed;
+    right:20px;
+    bottom:25px;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+
+    z-index:9999;
+
+    animation:melayang 2s ease-in-out infinite;
+}
+
+.game-float img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    cursor:pointer;
+}
+
+@keyframes melayang{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+document.querySelector(".game-float").onclick = function(){
+
+    window.location.href = "minigame.html";
+
+}
+
+.floating-game{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    background:#00bfff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 0 20px rgba(0,191,255,.6);
+
+    z-index:9999;
+
+    animation:mengambang 2.5s ease-in-out infinite;
+
+    text-decoration:none;
+}
+
+.floating-game img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.floating-game:active{
+    transform:scale(.9);
+}
+
+@keyframes mengambang{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
